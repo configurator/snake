@@ -71,6 +71,33 @@ function print() {
 	}
 }
 
+function drawboard() {
+	cursor.goto(0,0);
+	cursor.write('┌');
+	for (var x = 1; x < gameState.boardSize; x++) {
+		cursor.write('─');
+	}
+	cursor.write('┐');
+	cursor.write('\n');
+	for (var y = 1; y < gameState.boardSize; y++) {
+		cursor.goto(0,y);
+		cursor.write('│');
+		for (var x = 1; x < gameState.boardSize; x++) {
+			cursor.write(' ');
+		}
+		//cursor.goto(gameState.boardSize, y);
+		cursor.write('│');
+		cursor.write('\n');
+	}
+	cursor.write('└');
+	for (var x = 1; x < gameState.boardSize; x++) {
+		cursor.write('─');
+	}
+	cursor.write('┘');
+}
+
+drawboard();
+
 setInterval(function () {
 	tick();
 	print();
