@@ -2,13 +2,7 @@ const ansi = require('ansi');
 const cursor = ansi(process.stdout);
 
 const gameState = require('./gamestate');
-
-function isIn(x, y, array) {
-	return array.some(function (point) {
-		return point.x === x
-			&& point.y === y;
-	});
-}
+const { isIn } = require('./util');
 
 function print() {
 	cursor.hide();
