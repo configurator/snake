@@ -59,7 +59,6 @@ function drawboard(space) {
 
 function dead() {
 	drawboard('☠');
-	cursor.show();
 }
 
 module.exports = {
