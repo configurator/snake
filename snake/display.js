@@ -11,6 +11,8 @@ function isIn(x, y, array) {
 }
 
 function print() {
+	cursor.hide();
+
 	if (gameState.dead) {
 		dead();
 		return;
@@ -63,6 +65,7 @@ function drawboard(space) {
 
 function dead() {
 	drawboard('☠');
+	cursor.show();
 }
 
 module.exports = {
