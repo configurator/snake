@@ -2,16 +2,7 @@ const gameState = require('./gamestate');
 const { up, down, left, right } = require('./constants');
 
 function checkNewHead(x, y) {
-	if (x < 0) {
-		gameState.dead = true;
-	}
-	if (x >= gameState.boardSize) {
-		gameState.dead = true;
-	}
-	if (y < 0) {
-		gameState.dead = true;
-	}
-	if (y >= gameState.boardSize) {
+	if (x < 0 || x >= gameState.boardSize || y < 0 || y >= gameState.boardSize) {
 		gameState.dead = true;
 	}
 }
