@@ -1,7 +1,6 @@
 {
   "name": "snake",
   "version": "1.0.0",
-
   "dependencies": {
     "ansi": "^0.3.1"
   }
