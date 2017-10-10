@@ -1,8 +1,13 @@
 const gameState = require('./gamestate');
 const { up, down, left, right } = require('./constants');
 
+const { isIn } = require('./util');
+
 function checkNewHead(x, y) {
 	if (x < 0 || x >= gameState.boardSize || y < 0 || y >= gameState.boardSize) {
+		gameState.dead = true;
+	}
+	if (isIn(x, y, gameState.snake)) {
 		gameState.dead = true;
 	}
 }
@@ -30,8 +35,8 @@ function tick() {
 	gameState.snake.pop();
 
 	// Add a new head
-	gameState.snake.unshift({ x, y });
 	checkNewHead(x, y);
+	gameState.snake.unshift({ x, y });
 }
 
 module.exports = {
