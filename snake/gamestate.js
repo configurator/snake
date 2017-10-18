@@ -17,9 +17,9 @@ const gameState = {
 
 	dead: false,
 
-	apples: [
-		{ x: 5, y: 5 }
-	]
+	turnCounter: 0,
+
+	apples: []
 };
 
 module.exports = gameState;

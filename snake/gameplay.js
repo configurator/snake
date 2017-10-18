@@ -12,7 +12,17 @@ function checkNewHead(x, y) {
 	}
 }
 
+function addApple() {
+	var x = Math.floor(Math.random() * gameState.boardSize);
+	var y = Math.floor(Math.random() * gameState.boardSize);
+	gameState.apples.push({ x, y });
+}
+
 function tick() {
+	if (gameState.turnCounter % 10 === 0){
+		addApple();
+	}
+
 	// Calculate new head's location
 	var x = gameState.snake[0].x;
 	var y = gameState.snake[0].y;
@@ -37,8 +47,11 @@ function tick() {
 	// Add a new head
 	checkNewHead(x, y);
 	gameState.snake.unshift({ x, y });
+
+	// increase counter
+	gameState.turnCounter++;
 }
 
 module.exports = {
-	tick
+	tick,
 };
