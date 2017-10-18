@@ -18,6 +18,15 @@ function addApple() {
 	gameState.apples.push({ x, y });
 }
 
+function eatApple(x, y){
+	for (var i=0; i<gameState.apples.length; i++){
+		if (gameState.apples[i].x === x && gameState.apples[i].y === y){
+			gameState.apples.splice(i, 1);
+			return;
+		}
+	}
+}
+
 function tick() {
 	if (gameState.turnCounter % 10 === 0){
 		addApple();
@@ -41,8 +50,12 @@ function tick() {
 			break;
 	}
 
-	// Off with their tails!
-	gameState.snake.pop();
+	if (isIn(x, y, gameState.apples)) {
+		eatApple(x, y);
+	} else {
+		// Off with their tails!
+		gameState.snake.pop();
+	}
 
 	// Add a new head
 	checkNewHead(x, y);
