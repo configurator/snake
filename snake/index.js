@@ -7,5 +7,5 @@ drawboard(' ');
 setInterval(function () {
 	tick();
 	print();
-}, 500);
+}, 300);
 
