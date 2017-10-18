@@ -7,8 +7,11 @@ const { isIn } = require('./util');
 function print() {
 	cursor.hide();
 
-	if (gameState.dead) {
-		dead();
+	if (gameState.dead){
+		if(!gameState.deadPrinted) {
+			drawDead();
+			gameState.deadPrinted = true;
+		}
 		return;
 	}
 
@@ -57,7 +60,7 @@ function drawboard(space) {
 	cursor.write('\n');
 }
 
-function dead() {
+function drawDead() {
 	drawboard('☠');
 }
 

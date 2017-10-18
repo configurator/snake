@@ -17,6 +17,8 @@ const gameState = {
 
 	dead: false,
 
+	deadPrinted: false,
+
 	turnCounter: 0,
 
 	apples: []
