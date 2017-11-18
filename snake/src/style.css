@@ -1,0 +1,38 @@
+html, body {
+	width: 100vw;
+	min-height: 100vh;
+	margin: 0;
+}
+
+body {
+	background: #E8E8E8 url('../assets/hypnotize.png') repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game-board {
+	position: relative;
+	width: 21em;
+	height: 21em;
+	border: 1em dashed black;
+}
+
+.apple {
+	display: inline-block;
+	position: absolute;
+	background: url('../assets/apple.png') no-repeat;
+	background-size: contain;
+	width: 1em;
+	height: 1em;
+}
+
+.snake {
+	display: inline-block;
+	position: absolute;
+	background: #11EE11;
+	border-radius: 0.4em;
+	border: 1px solid #009900;
+	width: 1em;
+	height: 1em;
+}
