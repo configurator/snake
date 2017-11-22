@@ -23,12 +23,12 @@ function print() {
 			if (isIn(x, y, gameState.snake)) {
 				 cursor.write('█');
 			} else if (isIn(x, y, gameState.apples)) {
-				cursor.write('🍔');
+				cursor.write('☭');
 			} else {
 				cursor.write(' ');
 			}
 		}
-		cursor.write('\n');
+		//cursor.write('\n'); //on work computer I had to cancel this line to stop game board from sliding down
 	}
 }
 
@@ -61,7 +61,7 @@ function drawboard(space) {
 }
 
 function drawDead() {
-	drawboard('☠');
+	drawboard('♿');
 }
 
 module.exports = {
