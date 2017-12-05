@@ -4,8 +4,11 @@ require('./input');
 
 drawboard(' ');
 
-setInterval(function () {
+function gameLoop() {
+	setTimeout(gameLoop, 300);
 	tick();
 	print();
-}, 300);
+}
+
+gameLoop();
 
