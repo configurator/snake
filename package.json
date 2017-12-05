@@ -2,7 +2,8 @@
   "name": "snake",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "dependencies": {},
   "devDependencies": {
