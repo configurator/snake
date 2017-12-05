@@ -5,6 +5,11 @@ function print() {
 	board.innerHTML = '';
 
 	gameState.snake.forEach(function (part) {
+		if (part.x < 0 || part.x >= gameState.boardSize
+			|| part.y < 0 || part.y >= gameState.boardSize) {
+			return;
+		}
+
 		var snakeElement = document.createElement('i');
 		snakeElement.classList.add("snake");
 		snakeElement.style.top = part.y + "em";
