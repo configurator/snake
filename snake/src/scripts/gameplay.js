@@ -33,8 +33,12 @@ function eatApple(x, y){
 }
 
 function tick() {
-	if (gameState.turnCounter % 10 === 0){
+	if (gameState.turnCounter % 10 === 0) {
 		addApple();
+	}
+
+	if (gameState.turnCounter % 50 === 0) {
+		gameState.miliSeconds += 100;	
 	}
 
 	// Calculate new head's location
