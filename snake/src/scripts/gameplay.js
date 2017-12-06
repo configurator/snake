@@ -37,8 +37,8 @@ function tick() {
 		addApple();
 	}
 
-	if (gameState.turnCounter % 50 === 0 && gameState.miliSeconds > 100) {
-		gameState.miliSeconds -= 100;	
+	if (gameState.turnCounter % 30 === 0 && gameState.miliSeconds > 30) {
+		gameState.miliSeconds -= 30;	
 	}
 
 	// Calculate new head's location
