@@ -18,7 +18,7 @@ function addApple() {
 	var y = Math.floor(Math.random() * gameState.boardSize);
 	if (!isIn(x, y, gameState.snake)) {
 		gameState.apples.push({ x, y });
-		break;
+		return;
 	}
 	addApple();
 }
