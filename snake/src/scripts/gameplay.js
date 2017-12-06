@@ -13,9 +13,14 @@ function checkNewHead(x, y) {
 }
 
 function addApple() {
+	var Flag = false;
 	var x = Math.floor(Math.random() * gameState.boardSize);
 	var y = Math.floor(Math.random() * gameState.boardSize);
-	gameState.apples.push({ x, y });
+	if (!isIn(x, y, gameState.snake)) {
+		gameState.apples.push({ x, y });
+		break;
+	}
+	addApple();
 }
 
 function eatApple(x, y){
