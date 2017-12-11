@@ -13,7 +13,6 @@ function checkNewHead(x, y) {
 }
 
 function addApple() {
-	var Flag = false;
 	var x = Math.floor(Math.random() * gameState.boardSize);
 	var y = Math.floor(Math.random() * gameState.boardSize);
 	if (!isIn(x, y, gameState.snake)) {
@@ -37,8 +36,8 @@ function tick() {
 		addApple();
 	}
 
-	if (gameState.turnCounter % 30 === 0 && gameState.miliSeconds > 30) {
-		gameState.miliSeconds -= 30;	
+	if (gameState.turnCounter % 30 === 0 && gameState.turnLengthMs > 120) {
+		gameState.turnLengthMs -= 30;	
 	}
 
 	// Calculate new head's location

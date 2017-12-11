@@ -6,7 +6,7 @@ require('./input');
 drawboard(' ');
 
 function gameLoop() {
-	setTimeout(gameLoop, gameState.miliSeconds);
+	setTimeout(gameLoop, gameState.turnLengthMs);
 	tick();
 	print();
 }
