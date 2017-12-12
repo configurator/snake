@@ -5,11 +5,13 @@ require('./input');
 
 drawboard(' ');
 
+var interval = setInterval(gameLoop, gameState.turnLengthMs);
+
 function gameLoop() {
-	setTimeout(gameLoop, gameState.turnLengthMs);
-	tick();
+	var newTurnLengthMs = tick();
+	if (newTurnLengthMs) {
+		clearInterval(interval);
+		interval = setInterval(gameLoop, newTurnLengthMs);
+	}
 	print();
 }
-
-gameLoop();
-

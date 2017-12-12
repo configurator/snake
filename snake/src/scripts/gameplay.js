@@ -37,10 +37,6 @@ function tick() {
 		addApple();
 	}
 
-	if (gameState.turnCounter % 30 === 0 && gameState.turnLengthMs > 120) {
-		gameState.turnLengthMs -= 30;	
-	}
-
 	// Calculate new head's location
 	var x = gameState.snake[0].x;
 	var y = gameState.snake[0].y;
@@ -72,6 +68,12 @@ function tick() {
 
 	// increase counter
 	gameState.turnCounter++;
+
+	if (gameState.turnCounter % 30 === 0 && gameState.turnLengthMs > 90) {
+		gameState.turnLengthMs -= 30;
+		return gameState.turnLengthMs;
+	}
+
 }
 
 module.exports = {
