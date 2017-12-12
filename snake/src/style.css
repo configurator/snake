@@ -37,6 +37,14 @@ body {
 	height: 1em;
 }
 
+.game-score {
+	position: relative;
+	background: #11EE11;
+	width: 21em;
+	height: 5em;
+	border: 1em dashed black;
+}
+
 body.youlose::after {
 	content: ' ';
 
