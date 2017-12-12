@@ -21,6 +21,8 @@ const gameState = {
 
 	turnCounter: 0,
 
+	applesEaten: 0,
+
 	turnLengthMs: 300,
 
 	apples: []

@@ -26,6 +26,7 @@ function eatApple(x, y){
 	for (var i=0; i<gameState.apples.length; i++){
 		if (gameState.apples[i].x === x && gameState.apples[i].y === y){
 			gameState.apples.splice(i, 1);
+			gameState.applesEaten++;
 			return;
 		}
 	}
