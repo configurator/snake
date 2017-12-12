@@ -15,7 +15,7 @@ function checkNewHead(x, y) {
 function addApple() {
 	var x = Math.floor(Math.random() * gameState.boardSize);
 	var y = Math.floor(Math.random() * gameState.boardSize);
-	if (!isIn(x, y, gameState.snake)) {
+	if (!isIn(x, y, gameState.snake) && !isIn(x, y, gameState.apples)) {
 		gameState.apples.push({ x, y });
 		return;
 	}
