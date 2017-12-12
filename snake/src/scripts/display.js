@@ -2,7 +2,10 @@ const gameState = require('./gamestate');
 
 function print() {
 	var board = document.querySelector('.game-board');
-	board.innerHTML = '';
+	board.innerHTML = ''; // delete everything off the board
+
+	var gameScore = document.querySelector('.game-score');
+	gameScore.innerHTML = gameState.applesEaten;
 
 	gameState.snake.forEach(function (part) {
 		if (part.x < 0 || part.x >= gameState.boardSize
